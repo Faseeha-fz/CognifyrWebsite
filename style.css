@@ -923,18 +923,18 @@ body.light-theme {
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 /* Responsive image sizing */
-@media screen and (max-width: 768px) {
+@media (max-width: 767px) {
+  .home__image {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
   .home__handle {
     width: 190px; /* Keep same width as laptop */
     height: 293px; /* Keep same height as laptop */
     margin: 0 auto; /* Center the handle */
   }
 
-  .home__img {
-    width: 160px; /* Keep same width as laptop */
-    display: block;
-    margin: 0 auto; /* Center the image */
-  }
 }
   .about__info {
     grid-template-columns: repeat(2, 1fr);
