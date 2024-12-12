@@ -668,13 +668,20 @@ body.light-theme {
   background-color: var(--container-color);
   padding: 1rem;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Ensure the card aligns its content centrally */
 }
 
 .work__img {
   border-radius: 1rem;
   margin-bottom: 0.75rem;
-  align-items: center;
-  text-align: center;
+  display: block; /* Ensure the image behaves like a block element */
+  max-width: 100%; /* Makes the image responsive */
+  height: auto;
+  text-align: center; /* Centers the content inside the container */
 }
 
 .work__title {
@@ -708,6 +715,18 @@ body.light-theme {
   color: var(--body-color);
   
   
+}
+/* Mobile View Fix */
+@media screen and (max-width: 768px) {
+  .work__card {
+    width: 90%; /* Ensure card fits within the screen */
+    margin: 0 auto; /* Center it horizontally */
+  }
+
+  .work__img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 
@@ -922,21 +941,24 @@ body.light-theme {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-/* Responsive image sizing */
-@media (max-width: 320px) {
-  .home__image {
-    max-width: 100%;
-    height: 100%;
-    padding: 0 20px;
-  }
-}
-  .home__handle {
-    width: 190px; /* Keep same width as laptop */
-    height: 293px; /* Keep same height as laptop */
-    margin: 0 auto; /* Center the handle */
+@media screen and (max-width: 320px) {
+  .nav__menu {
+    padding: 1rem 1.5rem;
   }
 
-}
+  .home__button {
+    flex-direction: column;
+  }
+
+  .home__handle {
+    width: 150px;
+    height: 253px;
+  }
+
+  .home__img {
+    width: 130px;
+  }
+
   .about__info {
     grid-template-columns: repeat(2, 1fr);
   }
