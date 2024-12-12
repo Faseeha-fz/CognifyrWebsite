@@ -922,23 +922,32 @@ body.light-theme {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+/* Responsive image sizing */
 @media screen and (max-width: 320px) {
-  .nav__menu {
-    padding: 1rem 1.5rem;
-  }
-
-  .home__button {
-    flex-direction: column;
-  }
-
   .home__handle {
-    width: 150px;
-    height: 253px;
+    width: 100%; /* Full width of the container */
+    max-width: 250px; /* Maximum width to prevent stretching */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
   }
 
   .home__img {
-    width: 130px;
+    width: 100%; /* Full width of the parent container */
+    max-width: 250px; /* Maximum width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensures the entire image is visible */
+    display: block;
+    margin: 0 auto; /* Center the image */
   }
+}
+
+/* Optional: Add a base responsive style for all screen sizes */
+.home__handle,
+.home__img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 
   .about__info {
     grid-template-columns: repeat(2, 1fr);
